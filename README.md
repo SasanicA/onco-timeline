@@ -16,7 +16,9 @@ In short, it is a small end-to-end demonstration of:
 - interpretability that attributes the model's output to the source events.
 
 > [!WARNING]
+>
 > ## NOT FOR CLINICAL USE
+>
 > **This is an educational project. I built it to explore how hard it would be to
 > put such a system together end to end, and to learn the methods involved.**
 >
@@ -106,6 +108,9 @@ through to your system Python.
 
 ```
 uv venv
+# activate it (optional with uv, since "uv run" already uses .venv):
+#   Windows:         .venv\Scripts\activate
+#   macOS / Linux:   source .venv/bin/activate
 uv pip install -e .
 uv run python demo.py
 ```
