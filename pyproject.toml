@@ -1,0 +1,40 @@
+[project]
+name = "onco-timeline"
+version = "0.1.0"
+description = "Turn unstructured oncology notes into structured, code-mapped patient timelines with local LLM extraction, semantic harmonization, a temporal transformer, and explainability."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Sasan Ardaneh" }]
+license = { text = "MIT" }
+
+dependencies = [
+    "pydantic>=2.6",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "requests>=2.31",
+    "networkx>=3.2",
+    "plotly>=5.20",
+    "torch>=2.2",
+    "transformers>=4.40",
+    "sentence-transformers>=2.7",
+    "scikit-learn>=1.4",
+    "shap>=0.45",
+]
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.6"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+onco-demo = "demo:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/onco_timeline"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
